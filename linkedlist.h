@@ -11,7 +11,12 @@ class LinkedList{
     ~LinkedList();
     void appendNode();
     void deleteNode();
-    void Get();
+    void GetFront();
+    void GetBack();
+    void GetFrom();
+    void insertFront();
+    void insertBack();
+    //Friend sort fucntion
 
 
     private:
