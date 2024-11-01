@@ -1,5 +1,5 @@
 #include "linkedlist.h"
-#include "smartpointer.h"
+#include "helper.h"
 #include "dataclass.h"
 
 int main(){
@@ -8,13 +8,15 @@ int main(){
 
     LinkedList<string> list;
     cout << "Welcome to the Dahmer program. What would you like to do?";
-    cout << "1. Sort the text file.";
+    cout << "Display list";
+    cout << "1. Sort the list.";
     cout << "2. Print the sorted list.";
-    cout << "3. Add a name to the text file.";
-    cout << "4. Remove a name from the text file.";
+    cout << "3. Add a name to the list.";
+    cout << "4. Remove a name from the list.";
     cout << "5. ";
     cout << "11. End the program.";
 
+//Use switch
     while(choice != 11)
     {
         if(choice = 1)

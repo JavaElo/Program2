@@ -2,7 +2,6 @@
 #define linkedlist_H
 
 #include<iostream>
-#include<string>
 
 using namespace std;
 
@@ -26,21 +25,54 @@ public:
         tail = NULL;
     }
     ~LinkedList();
-    void appendNode();
+    void appendNode(T value);
     void deleteNode();
     void Get();
+    void display() const;
     
-    private:
-    LinkedList* head;
-    LinkedList* tail;
 
-    struct ListNode{
-        T value;
-        ListNode* next;
-    }
 };
 
+template <typename T>
+void LinkedList<T>::appendNode(T value) {
+    ListNode* node = new ListNode;
+    node->value = value;
+    node->next = NULL;
+    if (head == NULL) {
+        head = node;
+        tail = node;
+    }
+    else {
+        tail->next = node;
+        tail = node;
+    }
+}
 
+template <typename T>
+void LinkedList<T>::display() const {
+    if (head == NULL) {
+        cout << "There are no nodes in the list." << endl;
+    }
+    else {
+        ListNode* nodeC = head;
+        while (nodeC != NULL) {
+            cout << nodeC->value << " " << endl;
+            nodeC = nodeC->next;
+        }
+        cout << endl;
+    }
+}
+
+template <typename T>
+LinkedList<T>::~LinkedList() {
+    ListNode* nodeC = head;
+    cout << "\n\nNow calling the destructor";
+    while (nodeC != NULL) {
+        ListNode* nodeT = nodeC;
+        nodeC = nodeC->next;
+        delete nodeT;
+    }
+}
 
 
 
