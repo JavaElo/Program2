@@ -52,7 +52,7 @@ void printMenu(int choice)
     cout << "5. Remove a name from the text file.";
     cout << "6. Delete head of the linked list";
     cout << "7. Delete the tail of the linked list";
-    cout << "8. ";
+    cout << "8. Check to see if list is empty.";
     cout << "9. ";
     cout << "10. End the Program ";
     cin >> choice;
