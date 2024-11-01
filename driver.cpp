@@ -7,24 +7,19 @@ int main(){
     int choice; 
 
     LinkedList<string> list;
-    cout << "Welcome to the Dahmer program. What would you like to do?";
-    cout << "1. Sort the text file.";
-    cout << "2. Print the sorted list.";
-    cout << "3. Add a name to the text file.";
-    cout << "4. Remove a name from the text file.";
-    cout << "5. ";
-    cout << "11. End the program.";
+
+    void printMenu();
 
     while(choice != 11)
     {
         if(choice = 1)
         {
-            
+            void selectionSort();
         }
 
         if(choice = 2)
         {
-
+            void displayList();
         }
 
         if(choice = 3)
@@ -62,11 +57,12 @@ int main(){
 
         }
 
-        if (choice = 10)
-        {
-
-        }
     } 
+
+    if (choice > 11 || choice < 1)
+    {
+        cout << "Invalid choice. Please choose again.";
+    }
 
 
     return 0;
