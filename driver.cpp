@@ -7,64 +7,68 @@ int main(){
     int choice; 
 
     LinkedList<string> list;
+    do{
+        void printMenu(int choice);
 
-    void printMenu();
-
-//Use switch
-    while(choice != 11)
-    {
-        if(choice = 1)
+     //Use switch
+        switch (choice)
         {
-            void selectionSort();
-        }
+            case 1:
+                {
+                 void quickSort();
+                }
 
-        if(choice = 2)
-        {
-            void displayList();
-        }
+            case 2:
+                {
+                 void displayList();
+                }
 
-        if(choice = 3)
-        {
+            case 3:
+                {
 
-        }
+                }
 
-        if(choice = 4)
-        {
+            case 4:
+                {
 
-        }
+                }
 
-        if(choice = 5)
-        {
+            case 5:
+                {
 
-        }
+                }
 
-        if(choice = 6)
-        {
+            case 6:
+                {
 
-        }
+                }
 
-        if(choice = 7)
-        {
+            case 7:
+                {
 
-        }
+                }
 
-        if(choice = 8)
-        {
+            case 8:
+                {
 
-        }
+                }
 
-        if(choice = 9)
-        {
+            case 9:
+                {
 
-        }
+            }
 
-    } 
+    } while(choice != 10)
 
-    if (choice > 11 || choice < 1)
+    if (choice > 10 || choice < 1)
     {
         cout << "Invalid choice. Please choose again.";
     }
 
+    if (choice == 10)
+    {
+
+    }
 
     return 0;
-}
+    }
