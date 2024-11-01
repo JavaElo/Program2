@@ -2,7 +2,6 @@
 #define linkedlist_H
 
 #include<iostream>
-#include<string>
 
 using namespace std;
 
@@ -26,7 +25,7 @@ public:
         tail = NULL;
     }
     ~LinkedList();
-    void appendNode();
+    void appendNode(T value);
     void deleteNode();
     void Get();
     void PrintMenu(int);

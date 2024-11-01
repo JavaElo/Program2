@@ -1,5 +1,5 @@
 #include "linkedlist.h"
-#include "smartpointer.h"
+#include "helper.h"
 #include "dataclass.h"
 
 int main(){
@@ -10,6 +10,7 @@ int main(){
 
     void printMenu();
 
+//Use switch
     while(choice != 11)
     {
         if(choice = 1)
