@@ -29,8 +29,7 @@ public:
     void appendNode();
     void deleteNode();
     void Get();
-
-
+    
     private:
     LinkedList* head;
     LinkedList* tail;
