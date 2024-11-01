@@ -29,7 +29,7 @@ public:
     void deleteNode();
     void Get();
     void PrintMenu(int);
-    void quickSort();
+    void selectionSort();
 
     private:
     LinkedList* head;

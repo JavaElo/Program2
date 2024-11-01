@@ -15,7 +15,7 @@ int main(){
         {
             case 1:
                 {
-                 void quickSort();
+                 void selectionSort();
                 }
 
             case 2:
