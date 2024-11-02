@@ -26,67 +26,17 @@ public:
     }
     ~LinkedList();
     void appendNode(T value);
-    void deleteNode();
-    void Get();
-    void display() const;
-    void PrintMenu(int);
-    void ascendingSort()
-    {
-        selectionSort(head);
-    }
-    void descendingSort()
-    {
-        selectionSortReverser(head);
-    }
-        //sorts the function in ascending order with using a linked iist.
-        ListNode* selectionSort(ListNode head)
-    {
-        for(ListNode* start = head; start != nullptr; start = start->next)
-        {
-         ListNode* minIndex = start;
-            for (ListNode* current = start->next; current != nullptr; current = current->next)
-            {
-             if(current->value < minIndex->value)
-                {
-                 minIndex = current;
-                }
-            }
-            //checsk to see if the minimum point isnt the starting point.
-            if(minIndex != start)
-            {
-                int node = start->value;
-                start->value = minIndex->value;
-                minIndex->value = node;
-            }
-    }
-    return head;
-}
-    //sorts the function in descending order using a linked list.
-    ListNode* selectionSortReverse(ListNode head)
-    {
-        for(ListNode* start = head; start != nullptr; start = start->next)
-        {
-         ListNode* MaxIndex = start;
-            for (ListNode* current = start->next; current != nullptr; current = current->next)
-            {
-             if(current->value > maxIndex->value)
-                {
-                 MaxIndex = current;
-                }
-            }
-
-            //checks to see if the maximum point isnt the starting point.
-            if( MaxIndex!= start)
-            {
-                int node = start->value;
-                start->value = maxIndex->value;
-                maxIndex->value = node;
-            }
-    }
-    return head;
-
+    void deleteHead();
+    void displayList() const;
+    void printMenu();
+    bool isEmpty() const;
+    auto first();
+    auto last();
+    void insertFirst(T value);
+    void same();
+    void deleteTail();
 };
-};
+
 
 template <typename T>
 void LinkedList<T>::appendNode(T value) {
@@ -103,40 +53,42 @@ void LinkedList<T>::appendNode(T value) {
     }
 }
 
+
 template <typename T>
-void LinkedList<T>::deleteNode() {
+void LinkedList<T>::deleteHead() {
     if (head == NULL) {
         return;
     }
-    
-    if (position == 0) {
-        ListNode* node = head;
-        head = head->next;
-        delete node;
-        return;
-    }
-    
+
+    ListNode* node = head;
+    head = head->next;
+    delete node;
 }
 
+
+
+
 template <typename T>
-void LinkedList<T>::display() const {
+void LinkedList<T>::displayList() const {
     if (head == NULL) {
         cout << "There are no nodes in the list." << endl;
     }
     else {
         ListNode* nodeC = head;
         while (nodeC != NULL) {
-            cout << nodeC->value << " " << endl;
+            cout << "\n" << nodeC->value << " " << endl;
             nodeC = nodeC->next;
         }
         cout << endl;
     }
 }
 
+
+
 template <typename T>
 LinkedList<T>::~LinkedList() {
     ListNode* nodeC = head;
-    cout << "\n\nNow calling the destructor";
+    cout << "\n\nNow calling the destructor \n";
     while (nodeC != NULL) {
         ListNode* nodeT = nodeC;
         nodeC = nodeC->next;
@@ -144,23 +96,79 @@ LinkedList<T>::~LinkedList() {
     }
 }
 
-//prints the options for the user to choose from. 
-void printMenu(int choice)
-{
-    cout << "Welcome to the Dahmer program. What would you like to do?";
-    cout << "1. Sort ascending the list.";
-    cout << "2. Sort descending the list.";
-    cout << "3. Display.";
-    cout << "4. Add a name to the text file.";
-    cout << "5. Remove a name from the text file.";
-    cout << "6. Delete head of the linked list";
-    cout << "7. Delete the tail of the linked list";
-    cout << "8. Check to see if list is empty.";
-    cout << "9. ";
-    cout << "10. End the Program ";
+
+template <typename T>
+bool LinkedList<T>::isEmpty() const {
+    if (head == NULL) {
+        cout << "List is empty";
+    }
+    return head == NULL;
 }
 
-//IsEmpty();
+
+template <typename T>
+auto LinkedList<T>::first() {
+    return head->value;
+}
+
+
+template<typename T>
+auto LinkedList<T>::last() {
+    return tail->value;
+}
+
+
+template<typename T>
+void LinkedList<T>::insertFirst(T value) {
+    ListNode* node = new ListNode;
+    node->value = value;
+    node->next = head;
+    head = node;
+}
+
+
+template<typename T>
+void LinkedList<T>::deleteTail() {
+    if (head == NULL) {
+        return;
+    }
+    ListNode* nodeC = head;
+    while (nodeC->next != tail) {
+        nodeC = nodeC->next;
+    }
+    nodeC->next = NULL;
+    delete tail;
+    tail = nodeC;
+
+}
+
+
+template<typename T>
+void LinkedList<T>::same() {
+    if (head == tail) {
+        cout << "There is only one node in the list";
+    }
+    else {
+        cout << "There is more than one node in the list";
+    }
+}
+
+//Menu prompted to the user at the start
+template<typename T>
+void LinkedList<T>::printMenu()
+{
+    cout << "\n\nWelcome to the Dahmer program. What would you like to do?\n\n";
+    cout << "1. Print first node \n";
+    cout << "2. Display.\n";
+    cout << "3. Add a name to the list.\n";
+    cout << "4. Delete head of the list\n";
+    cout << "5. Check to see if list is empty.\n";
+    cout << "6. Print the last item in the list\n";
+    cout << "7. Insert name to the beggining of the list\n";
+    cout << "8. Check to see if there is only one node in the list\n";
+    cout << "9. Delete the last node in the list\n";
+    cout << "10. End the Program \n";
+}
 
 
 #endif

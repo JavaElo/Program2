@@ -6,6 +6,7 @@
 #include <fstream>
 
 using namespace std;
+
 //get from file, set name and age
 template <typename T>
 class ListL {

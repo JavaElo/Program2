@@ -1,95 +1,108 @@
 #include "linkedlist.h"
-#include "helper.h"
-#include "dataclass.h"
 
-int main(){
+#include "data.h"
 
-    int choice; 
+int main() {
 
+    int choice;
+    string name, data;
     LinkedList<string> list;
-    do{
-        void printMenu(int choice);
-        cin >> choice;
 
-     //Use switch
+    //Add the Dahmer victims to the linked list
+    cout << "Now adding the Dahmer victims to the list";
+    list.appendNode("Steven Hicks");
+    list.appendNode("Steven Tuomi");
+    list.appendNode("Jamie Doxtator");
+    list.appendNode("Richard Guerrero");
+    list.appendNode("Anthony Sears");
+    list.appendNode("Ricky Beeks");
+    list.appendNode("Eddie Smith");
+    list.appendNode("Ernest Miller");
+    list.appendNode("David Thomas");
+    list.appendNode("Curtis Straughter");
+    list.appendNode("Errol Lindsey");
+    list.appendNode("Anthony Hughes");
+    list.appendNode("Konerak Sinthasomphone");
+    list.appendNode("Matt Turner");
+    list.appendNode("Jeremiah Weinberger");
+    list.appendNode("Oliver Lacy");
+    list.appendNode("Joseph Bradehoft");
+
+
+    do {
+        
+        list.printMenu();
+        cin >> choice;
         switch (choice)
         {
-            case 1://asceding sort of the list
-                { 
-                    list.ascendingSort();
-                    cout << "List sorted in ascending order";
-                    break;
-                }
+        case 1:
+        {
+            cout << "\n" << list.first(); //print first element
+            break;
+        }
 
-            case 2: //descending sort of the list
-                {
-                    list.descendingSort();
-                    cout << "List sorted in descending order";
-                    break;
-                }
+        case 2:
+        {
+            list.displayList(); //Display the linked list
+            break;
+        }
 
-            case 3: //displaying the list
-                {
-                    list.display();
-                    break;
-                }
+        case 3:
+        {
+            cout << "What name do you want to add? ";
+            cin >> name;
+            list.appendNode(name); //append node written by user to the end
+            break;
+        }
 
-            case 4: //add a name to the text file
-                {
+        case 4:
+        {
+            list.deleteHead(); //delete the first element
+            break;
+        }
 
-                }
+        case 5:
+        {
+            list.isEmpty(); //Check if the linked list has any nodes in it
+            break;
+        }
 
-            case 5: //remove a name from the text file
-                {
-                    list.deleteNode();
-                    break;
-                }
+        case 6:
+        {
+            cout << "\n" << list.last(); //print the last element in the linked list
+            break;
+        }
 
-            case 6: //delete the head of the linked list
-                {
-                    list.deleteHead();
-                }
+        case 7:
+        {
+            cout << "Add name first: ";
+            cin >> name;
+            list.insertFirst(name); //insert name by user to the beggining of the linked list
+            break;
+        }
 
-            case 7: //delete the tail of the linked list
-                {
-                    list.deleteTail();
-                }
+        case 8:
+        {
+            list.same(); //check is there is only one node in the linked list
+            break;
+        }
 
-            case 8: //check to see if the list is empty
-                {
-                    if(list.isEmpty())
-                    {
-                        cout << "List is empty.";
-                    }
-                    else
-                    {
-                        cout << "List is not empty.";
-                    }
-                    break;
-                }
+        case 9:
+        {
+            list.deleteTail(); //delete the last element in the list
+            break;
+        }
 
-            case 9:
-                {
+        }
 
-                } 
-            case 10: //ends the program
-                {
-                    cout << "End of Program.";
-                    cout << "Thank you for using our program.";
-                    break;
-                }
+        //user validation
+        if (choice > 10 || choice < 1)
+        {
+            cout << "Invalid choice. Please choose again.";
+        }
 
-    } 
 
-    if (choice > 10 || choice < 1) //checks to see if the choice is valid.
-    {
-        cout << "Invalid choice. Please choose again.";
-    }
 
-    
-
-    
-} while(choice != 10);
-
+    } while (choice != 10);
     return 0;
 }
