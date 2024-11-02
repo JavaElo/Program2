@@ -58,7 +58,7 @@ int main(){
 
             }
 
-    } while(choice != 10)
+    } 
 
     if (choice > 10 || choice < 1)
     {
@@ -71,4 +71,4 @@ int main(){
     }
 
     return 0;
-}
+} while(choice != 10);
