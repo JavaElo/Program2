@@ -38,6 +38,7 @@ public:
     {
         selectionSortReverser(head);
     }
+        //sorts the function in ascending order with using a linked iist.
         ListNode* selectionSort(ListNode head)
     {
         for(ListNode* start = head; start != nullptr; start = start->next)
@@ -50,7 +51,7 @@ public:
                  minIndex = current;
                 }
             }
-
+            //checsk to see if the minimum point isnt the starting point.
             if(minIndex != start)
             {
                 int node = start->value;
@@ -60,7 +61,7 @@ public:
     }
     return head;
 }
-
+    //sorts the function in descending order using a linked list.
     ListNode* selectionSortReverse(ListNode head)
     {
         for(ListNode* start = head; start != nullptr; start = start->next)
@@ -74,6 +75,7 @@ public:
                 }
             }
 
+            //checks to see if the maximum point isnt the starting point.
             if( MaxIndex!= start)
             {
                 int node = start->value;
@@ -142,7 +144,7 @@ LinkedList<T>::~LinkedList() {
     }
 }
 
-
+//prints the options for the user to choose from. 
 void printMenu(int choice)
 {
     cout << "Welcome to the Dahmer program. What would you like to do?";

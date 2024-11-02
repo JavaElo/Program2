@@ -72,7 +72,7 @@ int main(){
                 {
 
                 } 
-            case 10:
+            case 10: //ends the program
                 {
                     cout << "End of Program.";
                     cout << "Thank you for using our program.";
@@ -81,7 +81,7 @@ int main(){
 
     } 
 
-    if (choice > 10 || choice < 1)
+    if (choice > 10 || choice < 1) //checks to see if the choice is valid.
     {
         cout << "Invalid choice. Please choose again.";
     }
