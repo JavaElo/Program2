@@ -30,6 +30,14 @@ public:
     void Get();
     void display() const;
     void PrintMenu(int);
+    void ascendingSort()
+    {
+        selectionSort(head);
+    }
+    void descendingSort()
+    {
+        selectionSortReverser(head);
+    }
         ListNode* selectionSort(ListNode head)
     {
         for(ListNode* start = head; start != nullptr; start = start->next)
@@ -148,7 +156,6 @@ void printMenu(int choice)
     cout << "8. Check to see if list is empty.";
     cout << "9. ";
     cout << "10. End the Program ";
-    cin >> choice;
 }
 
 //IsEmpty();
