@@ -30,8 +30,52 @@ public:
     void Get();
     void display() const;
     void PrintMenu(int);
-    void selectionSort();
+        ListNode* selectionSort(ListNode head)
+    {
+        for(ListNode* start = head; start != nullptr; start = start->next)
+        {
+         ListNode* minIndex = start;
+            for (ListNode* current = start->next; current != nullptr; current = current->next)
+            {
+             if(current->value < minIndex->value)
+                {
+                 minIndex = current;
+                }
+            }
 
+            if(minIndex != start)
+            {
+                int node = start->value;
+                start->value = minIndex->value;
+                minIndex->value = node;
+            }
+    }
+    return head;
+}
+
+    ListNode* selectionSortReverse(ListNode head)
+    {
+        for(ListNode* start = head; start != nullptr; start = start->next)
+        {
+         ListNode* MaxIndex = start;
+            for (ListNode* current = start->next; current != nullptr; current = current->next)
+            {
+             if(current->value > maxIndex->value)
+                {
+                 MaxIndex = current;
+                }
+            }
+
+            if( MaxIndex!= start)
+            {
+                int node = start->value;
+                start->value = maxIndex->value;
+                maxIndex->value = node;
+            }
+    }
+    return head;
+
+};
 };
 
 template <typename T>
